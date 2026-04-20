@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dedupsnap"
+version = "0.1.0"
+dependencies = [
+    "click",
+]
+
+[project.scripts]
+dedupsnap = "dedupsnap.cli:cli"
+
+#
+# --- THIS IS THE FIX ---
+# Add this section to tell setuptools to *only* look for the 'dedupsnap' package
+# and to ignore 'sample_data', 'tests', etc.
+[tool.setuptools]
+packages = ["dedupsnap"]
+#
+#
+
+# --- THIS IS A BEST-PRACTICE IMPROVEMENT ---
+# This moves pytest to an "optional" group called 'test'
+[project.optional-dependencies]
+test     = ["pytest"]
+frontend = ["streamlit>=1.35", "plotly>=5.20", "pandas"]

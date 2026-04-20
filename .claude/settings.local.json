@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(python -m pytest tests/ -v)",
+      "Bash(python -m dedupsnap.cli init ./temp/smoke_repo)",
+      "Bash(python -m dedupsnap.cli backup ./temp/smoke_repo ./dedupsnap --name \"smoke\")",
+      "Bash(python -m dedupsnap.cli list ./temp/smoke_repo)",
+      "Bash(python -m dedupsnap.cli stats ./temp/smoke_repo)",
+      "Bash(python -c \"from dedupsnap.cli import cli; from click.testing import CliRunner; r=CliRunner\\(\\); print\\(r.invoke\\(cli,['init','./temp/sr']\\).output\\); print\\(r.invoke\\(cli,['backup','./temp/sr','./dedupsnap','--name','smoke']\\).output\\)\")"
+    ]
+  }
+}
