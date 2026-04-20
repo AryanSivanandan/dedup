@@ -13,8 +13,8 @@ Merkle Mountain Range timeline, and Cuckoo-Filter index.
 │   init │ backup │ restore │ audit │ verify │ stats          │
 └──────────────┬──────────────────────────────────────────────┘
                │
-       ┌───────▼────────┐
-       │   Repo (repo.py)│  ←  MMR + CuckooFilter on disk
+       ┌ ──────▼──────── ┐
+       │  Repo (repo.py)│  ←  MMR + CuckooFilter on disk
        └──┬───────┬──────┘
           │       │
   ┌───────▼──┐ ┌──▼────────────┐
@@ -47,7 +47,7 @@ Merkle Mountain Range timeline, and Cuckoo-Filter index.
                  │ GSR
   ┌──────────────▼──────────────────────────────────┐
   │   MMR (mmr.py)  —  .dedupsnap/mmr.json          │
-  │   append(GSR)  →  Log Root (tamper-evident)      │
+  │   append(GSR)  →  Log Root (tamper-evident)     │
   └─────────────────────────────────────────────────┘
 
   CuckooFilter (.dedupsnap/cuckoo.json)  fast O(1) dedup lookup
